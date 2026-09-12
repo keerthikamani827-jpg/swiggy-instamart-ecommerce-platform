@@ -1,0 +1,61 @@
+ CREATE TABLE Category (
+  2      Category_ID NUMBER PRIMARY KEY,
+  3      Category_Name VARCHAR2(50) UNIQUE NOT NULL,
+  4      Description VARCHAR2(200)
+  5  );
+
+Table created.
+
+SQL> INSERT INTO Category VALUES (101, 'Fruits', 'Fresh fruits and seasonal fruits');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO Category VALUES (102, 'Vegetables', 'Fresh vegetables');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO Category VALUES (103, 'Beverages', 'Juices and soft drinks');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO Category VALUES (104, 'Snacks', 'Chips, biscuits and snacks');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO Category VALUES (105, 'Dairy', 'Milk and dairy products');
+
+1 row created.
+
+SQL> SELECT * FROM Category;
+
+CATEGORY_ID CATEGORY_NAME
+----------- --------------------------------------------------
+DESCRIPTION
+--------------------------------------------------------------------------------
+        101 Fruits
+Fresh fruits and seasonal fruits
+
+        102 Vegetables
+Fresh vegetables
+
+        103 Beverages
+Juices and soft drinks
+
+
+CATEGORY_ID CATEGORY_NAME
+----------- --------------------------------------------------
+DESCRIPTION
+--------------------------------------------------------------------------------
+        104 Snacks
+Chips, biscuits and snacks
+
+        105 Dairy
+Milk and dairy products
+
+SQL> COMMIT;
+
+Commit complete.
