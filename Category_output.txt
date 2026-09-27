@@ -1,8 +1,8 @@
  CREATE TABLE Category (
-  2      Category_ID NUMBER PRIMARY KEY,
-  3      Category_Name VARCHAR2(50) UNIQUE NOT NULL,
-  4      Description VARCHAR2(200)
-  5  );
+       Category_ID NUMBER PRIMARY KEY,
+       Category_Name VARCHAR2(50) UNIQUE NOT NULL,
+       Description VARCHAR2(200)
+   );
 
 Table created.
 
