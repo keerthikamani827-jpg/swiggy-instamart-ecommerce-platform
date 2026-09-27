@@ -1,85 +1,85 @@
 CREATE TABLE Product (
-  2      Product_ID NUMBER PRIMARY KEY,
-  3      Category_ID NUMBER,
-  4      Product_Name VARCHAR2(100) NOT NULL,
-  5      Brand VARCHAR2(50),
-  6      Price NUMBER(10,2) NOT NULL,
-  7      Stock NUMBER,
-  8      Weight VARCHAR2(20),
-  9      Expiry_Date DATE,
- 10      Image_URL VARCHAR2(200),
- 11      FOREIGN KEY (Category_ID)
- 12      REFERENCES Category(Category_ID)
- 13  );
+       Product_ID NUMBER PRIMARY KEY,
+       Category_ID NUMBER,
+       Product_Name VARCHAR2(100) NOT NULL,
+       Brand VARCHAR2(50),
+       Price NUMBER(10,2) NOT NULL,
+       Stock NUMBER,
+       Weight VARCHAR2(20),
+       Expiry_Date DATE,
+       Image_URL VARCHAR2(200),
+       FOREIGN KEY (Category_ID)
+       REFERENCES Category(Category_ID)
+   );
 
 Table created.
 
 SQL> INSERT INTO Product
-  2  VALUES (1, 101, 'Apple', 'Fresh Farm', 120.00, 50, '1 kg',
-  3          TO_DATE('20-09-2026','DD-MM-YYYY'), 'apple.jpg');
+    VALUES (1, 101, 'Apple', 'Fresh Farm', 120.00, 50, '1 kg',
+           TO_DATE('20-09-2026','DD-MM-YYYY'), 'apple.jpg');
 
 1 row created.
 
 SQL>
 SQL> INSERT INTO Product
-  2  VALUES (2, 101, 'Banana', 'Farm Fresh', 60.00, 80, '1 kg',
-  3          TO_DATE('18-09-2026','DD-MM-YYYY'), 'banana.jpg');
+    VALUES (2, 101, 'Banana', 'Farm Fresh', 60.00, 80, '1 kg',
+          TO_DATE('18-09-2026','DD-MM-YYYY'), 'banana.jpg');
 
 1 row created.
 
 SQL>
 SQL> INSERT INTO Product
-  2  VALUES (3, 102, 'Tomato', 'Organic Farm', 45.00, 100, '1 kg',
-  3          TO_DATE('16-09-2026','DD-MM-YYYY'), 'tomato.jpg');
+   VALUES (3, 102, 'Tomato', 'Organic Farm', 45.00, 100, '1 kg',
+            TO_DATE('16-09-2026','DD-MM-YYYY'), 'tomato.jpg');
 
 1 row created.
 
 SQL>
 SQL> INSERT INTO Product
-  2  VALUES (4, 102, 'Potato', 'Fresh Farm', 50.00, 75, '1 kg',
-  3          TO_DATE('25-09-2026','DD-MM-YYYY'), 'potato.jpg');
+  VALUES (4, 102, 'Potato', 'Fresh Farm', 50.00, 75, '1 kg',
+          TO_DATE('25-09-2026','DD-MM-YYYY'), 'potato.jpg');
 
 1 row created.
 
 SQL> 
 SQL> INSERT INTO Product
-  2  VALUES (5, 103, 'Orange Juice', 'Real', 110.00, 40, '1 L',
-  3          TO_DATE('30-10-2026','DD-MM-YYYY'), 'orange_juice.jpg');
+    VALUES (5, 103, 'Orange Juice', 'Real', 110.00, 40, '1 L',
+            TO_DATE('30-10-2026','DD-MM-YYYY'), 'orange_juice.jpg');
 
 1 row created.
 
 SQL> 
 SQL> INSERT INTO Product
-  2  VALUES (6, 103, 'Coca Cola', 'Coca Cola', 45.00, 60, '750 ml',
-  3          TO_DATE('15-12-2026','DD-MM-YYYY'), 'coke.jpg');
+    VALUES (6, 103, 'Coca Cola', 'Coca Cola', 45.00, 60, '750 ml',
+            TO_DATE('15-12-2026','DD-MM-YYYY'), 'coke.jpg');
 
 1 row created.
 
 SQL> 
 SQL> INSERT INTO Product
-  2  VALUES (7, 104, 'Potato Chips', 'Lays', 30.00, 90, '100 g',
-  3          TO_DATE('10-11-2026','DD-MM-YYYY'), 'lays.jpg');
+    VALUES (7, 104, 'Potato Chips', 'Lays', 30.00, 90, '100 g',
+            TO_DATE('10-11-2026','DD-MM-YYYY'), 'lays.jpg');
 
 1 row created.
 
 SQL>
 SQL> INSERT INTO Product
-  2  VALUES (8, 104, 'Biscuits', 'Parle', 25.00, 120, '200 g',
-  3          TO_DATE('05-12-2026','DD-MM-YYYY'), 'biscuit.jpg');
+    VALUES (8, 104, 'Biscuits', 'Parle', 25.00, 120, '200 g',
+            TO_DATE('05-12-2026','DD-MM-YYYY'), 'biscuit.jpg');
 
 1 row created.
 
 SQL> 
 SQL> INSERT INTO Product
-  2  VALUES (9, 105, 'Milk', 'Aavin', 30.00, 50, '500 ml',
-  3          TO_DATE('14-09-2026','DD-MM-YYYY'), 'milk.jpg');
+    VALUES (9, 105, 'Milk', 'Aavin', 30.00, 50, '500 ml',
+            TO_DATE('14-09-2026','DD-MM-YYYY'), 'milk.jpg');
 
 1 row created.
 
 SQL> 
 SQL> INSERT INTO Product
-  2  VALUES (10, 105, 'Curd', 'Aavin', 40.00, 45, '500 g',
-  3          TO_DATE('15-09-2026','DD-MM-YYYY'), 'curd.jpg');
+    VALUES (10, 105, 'Curd', 'Aavin', 40.00, 45, '500 g',
+            TO_DATE('15-09-2026','DD-MM-YYYY'), 'curd.jpg');
 
 1 row created.
 
@@ -664,12 +664,12 @@ curd.jpg
 10 rows selected.
 
 SQL> DELETE FROM Product
-  2  WHERE Product_ID = 9;
+    WHERE Product_ID = 9;
 
 1 row deleted.
 
 SQL> DELETE FROM Product
-  2  WHERE Product_ID = 10;
+    WHERE Product_ID = 10;
 
 1 row deleted.
 
@@ -902,17 +902,17 @@ biscuit.jpg
 8 rows selected.
 
 SQL> SELECT
-  2      c.Category_ID,
-  3      c.Category_Name,
-  4      p.Product_ID,
-  5      p.Product_Name,
-  6      p.Brand,
-  7      p.Price,
-  8      p.Stock
-  9  FROM Category c
- 10  JOIN Product p
- 11  ON c.Category_ID = p.Category_ID
- 12  ORDER BY c.Category_ID;
+        c.Category_ID,
+        c.Category_Name,
+        p.Product_ID,
+        p.Product_Name,
+        p.Brand,
+        p.Price,
+        p.Stock
+       FROM Category c
+     JOIN Product p
+    ON c.Category_ID = p.Category_ID
+     ORDER BY c.Category_ID;
 
 CATEGORY_ID CATEGORY_NAME                                      PRODUCT_ID
 ----------- -------------------------------------------------- ----------
@@ -984,13 +984,13 @@ Parle                                                      25        120
 8 rows selected.
 
 SQL> SELECT
-  2      c.Category_Name,
-  3      COUNT(p.Product_ID) AS Total_Products
-  4  FROM Category c
-  5  LEFT JOIN Product p
-  6  ON c.Category_ID = p.Category_ID
-  7  GROUP BY c.Category_Name
-  8  ORDER BY c.Category_Name;
+        c.Category_Name,
+        COUNT(p.Product_ID) AS Total_Products
+    FROM Category c
+    LEFT JOIN Product p
+    ON c.Category_ID = p.Category_ID
+    GROUP BY c.Category_Name
+    ORDER BY c.Category_Name;
 
 CATEGORY_NAME                                      TOTAL_PRODUCTS
 -------------------------------------------------- --------------
